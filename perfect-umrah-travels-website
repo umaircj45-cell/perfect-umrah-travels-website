@@ -1,0 +1,46 @@
+import { useEffect } from "react";
+import Navbar from "@/components/sections/Navbar";
+import Hero from "@/components/sections/Hero";
+import Packages from "@/components/sections/Packages";
+import UmrahHajj from "@/components/sections/UmrahHajj";
+import About from "@/components/sections/About";
+import Gallery from "@/components/sections/Gallery";
+import Testimonials from "@/components/sections/Testimonials";
+import Booking from "@/components/sections/Booking";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
+import WhatsAppFloat from "@/components/sections/WhatsAppFloat";
+
+const Index = () => {
+  useEffect(() => {
+    document.title = "Perfect Umrah Travels | Umrah, Hajj & Pakistan Tours";
+    const meta = document.querySelector('meta[name="description"]') || (() => {
+      const m = document.createElement("meta");
+      m.setAttribute("name", "description");
+      document.head.appendChild(m);
+      return m;
+    })();
+    meta.setAttribute(
+      "content",
+      "Perfect Umrah Travels — Pakistan's trusted travel agency for Umrah, Hajj, Skardu, Swat & Kashmir tours. Book affordable, premium packages today."
+    );
+  }, []);
+
+  return (
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <Packages />
+      <UmrahHajj />
+      <About />
+      <Gallery />
+      <Testimonials />
+      <Booking />
+      <Contact />
+      <Footer />
+      <WhatsAppFloat />
+    </main>
+  );
+};
+
+export default Index;
